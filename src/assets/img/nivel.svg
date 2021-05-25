@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>ico/ico7 copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M18,27 L27,27 L27,41 L18,41 L18,27 Z M34,30 L43,30 L43,41 L34,41 L34,30 Z M41.3666088,15.2748638 L46.6880875,20.3828338 C46.8998823,20.5851499 47.0126977,20.8651226 46.9988618,21.1512262 C46.9860903,21.4393733 46.8477318,21.7060627 46.617844,21.8910082 L40.2320695,27 L38.8687067,25.4294959 L43.0897036,22.0524523 C35.9929796,21.8276567 21.9630784,20.1413488 1,16.9935286 L1.46935442,15 C22.3167794,18.1239782 36.2579892,19.7952997 43.2929841,20.0139646 L39.8616946,16.7196866 L41.3666088,15.2748638 Z M1,24 L10,24 L10,41 L1,41 L1,24 Z" id="path-1"></path>
+    </defs>
+    <g id="ico/ico7-copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Combined-Shape" fill="#000000" xlink:href="#path-1"></use>
+    </g>
+</svg>

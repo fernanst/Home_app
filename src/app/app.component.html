@@ -1,0 +1,105 @@
+<!--table>
+    <tr>
+        <td>Topic: </td>
+        <td><input [(ngModel)]="topicname" type="text" /></td>
+        <td><button type="button" (click)="subscribeNewTopic()">Subscribe Topic</button></td>
+    </tr>
+    <tr>
+        <td>Message: </td>
+        <td><input [(ngModel)]="msg" type="text" /></td>
+        <td><button type="button" (click)="sendmsg()">Send</button></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>&nbsp;&nbsp;<button type="button" (click)="clear()">Clear Log</button></td>
+        <td></td>
+    </tr>
+</table>
+<br /><br />
+<div #msglog>
+</div-->
+<header>
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top bar_nav_opa">
+		<a class="navbar-brand d-flex" href="#">
+			<div class="logo">
+				<img src="assets/img/ico_user.svg" style="width: 35px">
+			</div>
+			<div class="pl-2 text_user align-self-center brand"></div>
+		</a>
+    </nav>
+</header>
+
+<main role="main" class="m-3 pt-3">
+    <div class="d-flex justify-content-start bg_iq box">
+        <div class="align-self-center">
+            <img src="assets/img/ico_cascada_iq.svg" width="42" >
+        </div>
+        <div class="vl"></div>
+        <div class="text_device align-self-center flex-fill">Entrada</div>
+    </div>
+    <form [formGroup]="controlForm">
+        <div class="box2">
+            <div class="row pr-3 pl-3">
+                <div class="text_device align-self-center flex-fill">Baño</div>
+                <div class="align-self-end">
+                    <label class="switch d-flex align-items-end">
+                        <input formControlName="salida12" type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="row pr-3 pl-3">
+                <div class="text_device align-self-center flex-fill">Espejo</div>
+                <div class="align-self-end">
+                    <label class="switch d-flex align-items-end">
+                        <input formControlName="salida13" type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="row pr-3 pl-3">
+                <div class="text_device align-self-center flex-fill">Aux</div>
+                <div class="align-self-end">
+                    <label class="switch d-flex align-items-end">
+                        <input formControlName="salida14" type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <button type="button" class="button_sign pt-2 m-2 btn-primary d-flex align-items-center btn-lg" (click)="sendmsg('salida11')">Entrada</button>
+            <button type="button" class="button_sign pt-2 m-2 btn-primary d-flex align-items-center btn-lg" (click)="sendmsg('salida10')">Hall</button>
+            <button type="button" class="button_sign pt-2 m-2 btn-primary d-flex align-items-center btn-lg" (click)="sendmsg('salida9')">Escalera</button>
+        </div>
+    </form>
+    <div class="d-flex mt-4 justify-content-start bg_iq box">
+        <div class="align-self-center">
+            <img src="assets/img/ico_cascada_iq.svg" width="42" >
+        </div>
+        <div class="vl"></div>
+        <div class="text_device align-self-center flex-fill">Valvulas</div>
+    </div>
+    <form [formGroup]="controlForm">
+        <!--div class="box2" style="width: 250px;"-->
+        <div class="box2">
+            <div class="row pr-3 pl-3">
+                <div class="text_device align-self-center flex-fill">Valvula Cascada</div>
+                <div class="align-self-center">
+                    <label class="switch d-flex align-items-end">
+                        <input formControlName="deviceToggle4" type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="row pr-3 pl-3">
+                <div class="text_device align-self-center flex-fill">Valvula Suelo</div>
+                <div class="align-self-end">
+                    <label class="switch d-flex align-items-end">
+                        <input formControlName="deviceToggle5" type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </form>
+</main>
+

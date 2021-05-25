@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="242" height="305.948" viewBox="0 0 242 305.948">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #262626;
+        font-size: 60px;
+        font-family: SegoeUI, Segoe UI;
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-4 {
+        fill: #0071bc;
+        mix-blend-mode: multiply;
+        isolation: isolate;
+      }
+
+      .cls-5 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_14" data-name="Rectángulo 14" class="cls-1" width="218.404" height="218.404" rx="17.484"/>
+    </clipPath>
+  </defs>
+  <g id="Logo" transform="translate(-94 -294.756)">
+    <text id="Pool_App" data-name="Pool App" class="cls-2" transform="translate(94 585.704)"><tspan x="0" y="0">Pool App</tspan></text>
+    <g id="Grupo_20" data-name="Grupo 20" transform="translate(-810.148 -80.244)">
+      <rect id="Rectángulo_15" data-name="Rectángulo 15" class="cls-4" width="218.404" height="218.404" rx="17.484" transform="translate(908.148 375)"/>
+      <g id="Grupo_19" data-name="Grupo 19" transform="translate(943.86 427.467)">
+        <path id="Trazado_32" data-name="Trazado 32" class="cls-5" d="M928.083,414.47a9.09,9.09,0,0,1,3.35-7.481q3.354-2.7,9.274-2.7t9.274,2.669a9.09,9.09,0,0,1,3.352,7.545,9.3,9.3,0,0,1-3.352,7.619q-3.351,2.746-9.274,2.741t-9.274-2.741A9.333,9.333,0,0,1,928.083,414.47Zm1.324,91.13V447.852q0-10.832,10.053-10.91H941.8q10.055,0,10.132,10.91V505.6q0,10.679-9.9,10.677h-2.417Q929.408,516.277,929.407,505.6Z" transform="translate(-928.083 -404.288)"/>
+        <path id="Trazado_33" data-name="Trazado 33" class="cls-5" d="M964.511,500.2q-14.943-14.914-14.937-38.675T964.692,422.7q15.1-15.069,38.46-15.068,23.381,0,38.084,14.944t14.717,38.752a53.206,53.206,0,0,1-10.442,32.414L1057.9,506.86a1.142,1.142,0,0,1,.156.3,4.85,4.85,0,0,1-1.17,2.162,15.165,15.165,0,0,1-4.871,3.891,14.582,14.582,0,0,1-7.209,1.89q-7.287,0-14.261-7.631a53.883,53.883,0,0,1-27.615,7.631Q979.454,515.108,964.511,500.2Zm8.676-38.714q0,14.408,8.443,23.726a27.769,27.769,0,0,0,21.522,9.319,33.689,33.689,0,0,0,13.393-2.662L1006.5,481.22a13.172,13.172,0,0,1-3.508-7.436,7.8,7.8,0,0,1-.077-1.1,8.277,8.277,0,0,1,2.573-6.026l1.012-.941a8.608,8.608,0,0,1,5.442-2.112q4.208,0,8.715,4.851l9.262,9.944a39.512,39.512,0,0,0,3.507-16.913q0-14.562-8.366-23.919t-21.757-9.358q-13.54,0-21.834,9.281T973.187,461.489Z" transform="translate(-911.075 -401.638)"/>
+      </g>
+    </g>
+  </g>
+</svg>

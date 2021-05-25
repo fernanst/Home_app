@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30.054" height="41.139" viewBox="0 0 30.054 41.139">
+  <g id="Grupo_16" data-name="Grupo 16" transform="translate(-6.8 -2)">
+    <g id="Grupo_15" data-name="Grupo 15" transform="translate(6.8 2)">
+      <path id="Trazado_24" data-name="Trazado 24" d="M25.285,26.542V15a.8.8,0,1,0-1.6,0V26.542A5.426,5.426,0,0,0,19,31.912a5.485,5.485,0,1,0,10.97,0A5.607,5.607,0,0,0,25.285,26.542Zm-.8,9.256a3.885,3.885,0,1,1,3.885-3.885A3.853,3.853,0,0,1,24.485,35.8Z" transform="translate(-5.059 -0.259)" fill="#fff"/>
+      <path id="Trazado_25" data-name="Trazado 25" d="M29.1,25.2V6.114a4.114,4.114,0,1,0-8.228,0v19.2A9.308,9.308,0,0,0,15.5,33.768a9.37,9.37,0,1,0,18.741,0A9.269,9.269,0,0,0,29.1,25.2ZM24.985,41.539a7.782,7.782,0,0,1-2.971-14.97.765.765,0,0,0,.457-.8V6.114a2.4,2.4,0,1,1,4.8,0V25.769a.962.962,0,0,0,.457.8,7.7,7.7,0,0,1,4.8,7.2A7.515,7.515,0,0,1,24.985,41.539Z" transform="translate(-5.558 -2)" fill="#fff"/>
+      <path id="Trazado_26" data-name="Trazado 26" d="M29.1,7.8h3.885a.8.8,0,0,0,0-1.6H29.1a.8.8,0,1,0,0,1.6Z" transform="translate(-3.731 -1.4)" fill="#fff"/>
+      <path id="Trazado_27" data-name="Trazado 27" d="M29.1,11.2h2.628a.8.8,0,1,0,0-1.6H29.1a.8.8,0,1,0,0,1.6Z" transform="translate(-3.731 -0.915)" fill="#fff"/>
+      <path id="Trazado_28" data-name="Trazado 28" d="M33.1,13h-4a.8.8,0,1,0,0,1.6h3.885a.781.781,0,0,0,.8-.8C33.785,13.343,33.557,13,33.1,13Z" transform="translate(-3.731 -0.43)" fill="#fff"/>
+      <path id="Trazado_29" data-name="Trazado 29" d="M29.1,18.1h2.628a.8.8,0,1,0,0-1.6H29.1a.8.8,0,1,0,0,1.6Z" transform="translate(-3.731 0.07)" fill="#fff"/>
+      <path id="Trazado_30" data-name="Trazado 30" d="M33.1,19.9h-4a.8.8,0,1,0,0,1.6h3.885a.781.781,0,0,0,.8-.8A.764.764,0,0,0,33.1,19.9Z" transform="translate(-3.731 0.555)" fill="#fff"/>
+      <path id="Trazado_31" data-name="Trazado 31" d="M18.685,16.8c0-4.8-5.142-9.942-5.371-10.17a.763.763,0,0,0-1.143,0C11.942,6.861,6.8,12,6.8,16.8a6.026,6.026,0,0,0,5.942,6.171A6.1,6.1,0,0,0,18.685,16.8Zm-5.942,4.457A4.467,4.467,0,0,1,8.4,16.688c0-3.2,2.971-6.971,4.342-8.342,1.257,1.486,4.342,5.142,4.342,8.342A4.467,4.467,0,0,1,12.742,21.259Z" transform="translate(-6.8 -1.376)" fill="#fff"/>
+    </g>
+    <line id="Línea_2" data-name="Línea 2" transform="translate(20.741 25.998)" fill="none"/>
+  </g>
+</svg>
