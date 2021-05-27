@@ -13,16 +13,29 @@ export class AppComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
   private subscription2: Subscription;
   private message: String;
-  topic_status_output = 'home/status_input/#';
+  topic_status_output = 'home/#';
   topic_output_m1 = 'home/outputs/modulo1';
   topic_output_m2 = 'home/outputs/modulo2';
   msg: any;
   isConnected: boolean = false;
 
   controlForm: FormGroup = new FormGroup({
+    'salida1': new FormControl(),
+    'salida2': new FormControl(),
+    'salida3': new FormControl(),
+    'salida4': new FormControl(),
+    'salida5': new FormControl(),
+    'salida6': new FormControl(),
+    'salida7': new FormControl(),
+    'salida8': new FormControl(),
+    'salida9': new FormControl(),
+    'salida10': new FormControl(),
+    'salida11': new FormControl(),
     'salida12': new FormControl(),
     'salida13': new FormControl(),
     'salida14': new FormControl(),
+    'salida15': new FormControl(),
+    'salida16': new FormControl(),
     'deviceToggle4': new FormControl(),
     'deviceToggle5': new FormControl()
   });
@@ -37,46 +50,22 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     // Broker connection on startup
     // this.connectToMQTTBroker();
-    this.salida12();
-    this.salida13();
-    this.salida14();
+    for (let i = 1; i < 17; i++) {
+      this.salida("salida" + i)
+    }
     this.subscribeToggle4();
     this.subscribeToggle5();
     this.subscribeNewTopic();
   }
 
-  private salida12() {
-  	this.deviceToggleSubscription = this.controlForm.get('salida12').valueChanges.subscribe(activate => {
+  private salida(salida_name) {
+  	this.deviceToggleSubscription = this.controlForm.get(salida_name).valueChanges.subscribe(activate => {
       if (typeof(activate) == "boolean"){
         //var change: string = String(activate);
-        var str_json='{"salida12":"' + activate + '"}'
+        var str_json='{"' + salida_name + '":"' + activate + '"}'
         console.log('str_json',str_json)
-        this._mqttService.unsafePublish(this.topic_output_m1, str_json, { qos: 1, retain: true })
+        this._mqttService.unsafePublish(this.topic_output_m1, str_json, { qos: 1, retain: false })
         console.log('status',activate,this.topic_output_m1)
-      }
-    })
-  }
-
-  private salida13() {
-  	this.deviceToggleSubscription = this.controlForm.get('salida13').valueChanges.subscribe(activate => {
-      if (typeof(activate) == "boolean"){
-        //var change: string = String(activate);
-        var str_json='{"salida13":"' + activate + '"}'
-        console.log('str_json',str_json)
-        this._mqttService.unsafePublish(this.topic_output_m1, str_json, { qos: 1, retain: true })
-        console.log('status',activate)
-      }
-    })
-  }
-
-  private salida14() {
-  	this.deviceToggleSubscription = this.controlForm.get('salida14').valueChanges.subscribe(activate => {
-      if (typeof(activate) == "boolean"){
-        //var change: string = String(activate);
-        var str_json='{"salida14":"' + activate + '"}'
-        console.log('str_json',str_json)
-        this._mqttService.unsafePublish(this.topic_output_m1, str_json, { qos: 1, retain: true })
-        console.log('status',activate)
       }
     })
   }
@@ -90,7 +79,7 @@ export class AppComponent implements OnInit, OnDestroy {
         else {value = "close"}
         var str_json='{"val_cascada":"' + value + '"}'
         console.log('str_json',str_json)
-        this._mqttService.unsafePublish(this.topic_output_m2, str_json, { qos: 1, retain: true })
+        this._mqttService.unsafePublish(this.topic_output_m2, str_json, { qos: 1, retain: false })
         console.log('status',activate)
       }
     })
@@ -104,7 +93,7 @@ export class AppComponent implements OnInit, OnDestroy {
         else {value = "close"}
         var str_json='{"val_suelo":"' + activate + '"}'
         console.log('str_json',str_json)
-        this._mqttService.unsafePublish(this.topic_output_m2, str_json, { qos: 1, retain: true })
+        this._mqttService.unsafePublish(this.topic_output_m2, str_json, { qos: 1, retain: false })
         console.log('status',activate)
       }
     })
@@ -122,7 +111,7 @@ export class AppComponent implements OnInit, OnDestroy {
       var _topic = message.topic;
       //var salida:string = this.msg["salida12"];
       var salida:number;
-      console.log(this.msg)
+      console.log(_topic,this.msg)
       if (_topic == 'home/status_input/modulo2') {
         for (var key in this.msg) {
           if (key == 'val_cascada_close' && this.msg[key]=='true'){
@@ -131,32 +120,26 @@ export class AppComponent implements OnInit, OnDestroy {
           else if (key == 'val_cascada_open' && this.msg[key]=='true') {
             this.controlForm.get('deviceToggle4').setValue(1, {emitEvent: false} );
           }
-
           if (key == 'val_suelo_close' && this.msg[key]=='true'){
             this.controlForm.get('deviceToggle5').setValue(0, {emitEvent: false} );
           } 
           else if (key == 'val_suelo_open' && this.msg[key]=='true') {
             this.controlForm.get('deviceToggle5').setValue(1, {emitEvent: false} );
           }
-          console.log(key);
-          console.log(this.msg[key]);
+          //console.log(key + ":",this.msg[key]);
         }
       }
-      else {
+      else if (_topic == 'home/status_output/modulo1') {
         for (var key in this.msg) {
           if (this.msg[key]=='true' || this.msg[key]=='True') {salida = 1}
           else {salida = 0}
-          this.controlForm.get(key).setValue(salida, {emitEvent: true} );
-          console.log(key);
-          console.log(this.msg[key]);
+          if (key!="device"){
+            this.controlForm.get(key).setValue(salida, {emitEvent: false} );
+            //console.log(key + ":",this.msg[key],salida);
+          }
         }
       }
-      
-      console.log('msg: ################', salida)
-      //this.logMsg('Message: ' + message.payload.toString() + '<br> for topic: ' + message.topic);
     });
-    //this.subscription2 = this._mqttService.observe(this.topicname_m2).subscribe((message: IMqttMessage) => {});
-    //this.logMsg('subscribed to topic: ' + this.topicname_m1)
   }
 
   sendmsg(envio): void {
@@ -166,10 +149,10 @@ export class AppComponent implements OnInit, OnDestroy {
     this.msg = ''
   }
 
-  // onConnected(): void {
-  //   this.logMsg('Connected to broker!');
-  //   this.isConnected = true;
-  // }
+   onConnected(): void {
+     this.logMsg('Connected to broker!');
+     this.isConnected = true;
+   }
 
   logMsg(message): void {
     this.msglog.nativeElement.innerHTML += '<br><hr>' + message;
