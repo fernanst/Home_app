@@ -91,7 +91,7 @@ export class AppComponent implements OnInit, OnDestroy {
       if (typeof(activate) == "boolean"){
         if (activate) {value = "open"}
         else {value = "close"}
-        var str_json='{"val_suelo":"' + activate + '"}'
+        var str_json='{"val_suelo":"' + value + '"}'
         console.log('str_json',str_json)
         this._mqttService.unsafePublish(this.topic_output_m2, str_json, { qos: 1, retain: false })
         console.log('status',activate)
