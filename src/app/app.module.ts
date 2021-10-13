@@ -8,7 +8,8 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   hostname: '192.168.1.50',
   port: 9001,
   //path: '/mqtt'
-  path: ''
+  path: '',
+  protocol: 'ws',
 }
 
 @NgModule({

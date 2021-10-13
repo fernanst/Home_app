@@ -23,6 +23,36 @@
   font-size: 20px;
 }*/
 
+.button_cober {
+  width: 60px;
+  height: 60px;
+  color: white;
+  border-radius: 10px;
+  background-color: #0060AB;
+  border: 2px solid white;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-family: 'Asap', arial;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.button_cober_stop {
+  width: 60px;
+  height: 40px;
+  color: white;
+  border-radius: 10px;
+  background-color: #0060AB;
+  border: 2px solid white;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-family: 'Asap', arial;
+  font-weight: bold;
+  font-size: 15px;
+}
+
 .btn_dia_semana {
   width: 40px;
   height: 40px;
@@ -370,17 +400,6 @@ border-radius: 10px 10px 10px 10px;
   /*}*/
 }
 
-.text_program_1 {
-  /*width: 80px;*/
-  height: 16px;
-  color: #212121;
-  text-align: center;
-  display: block;
-  font-family: 'Asap', arial;
-  font-weight: bold;
-  font-size: 14px;
-}
-
 .text_sign {
   /*width: 80px;*/
   height: 16px;
@@ -436,10 +455,10 @@ border-radius: 10px 10px 10px 10px;
   font-size: 18px
 }
 
-.text_program_2 {
-  width: 59px;
-  height: 23px;
-  color: #0060AB;
+.text_program_1 {
+  /*width: 80px;*/
+  height: 30px;
+  color: whitesmoke;
   text-align: center;
   display: block;
   font-family: 'Asap', arial;
@@ -447,10 +466,24 @@ border-radius: 10px 10px 10px 10px;
   font-size: 20px;
 }
 
+.text_program_2 {
+  width: auto;
+  height: 23px;
+  /*color: #0060AB;*/
+  color: #cbc72d;
+  text-align: center;
+  display: block;
+  font-family: 'Asap', arial;
+  font-weight: bold;
+  font-size: 18px;
+  /*margin-top: 10px;*/
+}
+
 .line_div {
   width:auto;
   border: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  /*border-top: 1px solid rgba(0, 0, 0, 0.1);*/
+  border-top: 1px solid white;
   margin-top: 10px; 
   margin-bottom: 10px;
   margin-left: 5px;
@@ -507,21 +540,27 @@ border-radius: 10px 10px 10px 10px;
 }
 
 .box {
-  background-color: #E5E5E5;
+  /*background-color: #E5E5E5;*/
+  background-color: #1e1b1b;
   /*width:250px;  */
   width:auto;
-  height: 40px;
+  /*height: 40px;*/
+  height: auto;
   margin-top: 15px;
   margin: 0px 0px; /*0px 20px;*/
-  border-left: 1px solid #B5B5B5;
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+  /*border-left: 1px solid #B5B5B5;
   border-right: 1px solid #B5B5B5;
   border-top: 1px solid #B5B5B5;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 10px 10px 0px 0px;*/
   /*padding: 15px;*/
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 5px;
   padding-bottom:5px;
+  margin-left: 10px;
+  margin-right: 10px;
   display: flex;
   align-items: center;
 }
@@ -589,16 +628,19 @@ border-radius: 10px 10px 10px 10px;
 }
 
 .box2 {
-  background-color: #FFFF;
+  /*background-color: #FFFF;*/
+  background-color: #1e1b1b;
   width:auto;
   margin-top: 0px;
   margin: 0px 0px; /*0px 20px;*/
-  border-left: 1px solid #B5B5B5;
+  /*border-left: 1px solid #B5B5B5;
   border-right: 1px solid #B5B5B5;
   border-bottom: 1px solid #B5B5B5;
-  border-radius: 0px 0px 10px 10px;
+  border-radius: 0px 0px 10px 10px;*/
   padding: 5px 5px;
   padding-bottom: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
 
 }
 
@@ -625,9 +667,23 @@ border-radius: 10px 10px 10px 10px;
   /*width: 145px;*/
   font-family: 'Asap', arial;
   font-weight: bold;
+  text-decoration-color: white;
+  font-size: 20px;
+  margin: auto;
+  color: white;
+  padding-left: 20px;
+  /*margin-right: 20px;
+  margin-top: 6px;*/
+}
+
+.text_device_2 {
+  /*width: 145px;*/
+  font-family: 'Asap', arial;
+  /*font-weight: bold;*/
   text-decoration-color: #212121;
   font-size: 18px;
   margin: auto;
+  color: whitesmoke;
   /*margin-right: 20px;
   margin-top: 6px;*/
 }
@@ -635,8 +691,9 @@ border-radius: 10px 10px 10px 10px;
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 55px;
+  /*height: 34px;*/
+  height: 30px;
   margin-top: 3px;
   margin-right: 5px;
 }
@@ -675,7 +732,8 @@ input:checked + .slider:before {
   right: 0;
   bottom: 0;
   /*background-color: #ccc;*/
-  background-color: red; /*darkgreen;*/
+  /*background-color: red; /*darkgreen;*/
+  background-color: #aebac7;
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 34px;
@@ -684,8 +742,8 @@ input:checked + .slider:before {
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 22px;
+  width: 22px;
   left: 4px;
   right: 0px;
   bottom: 4px;
