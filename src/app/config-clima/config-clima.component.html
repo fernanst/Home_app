@@ -1,0 +1,89 @@
+<main role="main">
+    <div class="tarjeta" style="margin-left: 250px;">
+        <div class="d-flex mt-2 justify-content-start pl-2">
+            <div class="d-flex mt-2 justify-content-start pl-2">
+                <div class="align-self-center">
+                    <img src="assets/img/ico_temp.svg" width="42" >
+                </div>
+                <div class="text_device align-self-center flex-fill pl-4">Control Temperatura</div>
+            </div>
+        </div>
+        <div class="line_div"></div>
+        <div class="pt-4 pl-2 pr-2 pb-3">
+            
+            <div class="row pr-3 pl-3">
+                <div class="text_device_2 align-self-around flex-fill">Temp. entrada</div>
+                <div class="align-self-end text_program_2">{{temp_planta_baja}}</div>
+                <div class="align-self-end text_program_2">{{temp_salon_consigna}}</div>
+            </div>
+            
+            <div class="p-1 row pr-3 pl-3">
+                <div class="text_device_2 align-self-around flex-fill">Temp. Buhardilla</div>
+                <div class="align-self-end text_program_2">{{temp_buhardilla}}</div>
+                <div class="align-self-end text_program_2">{{temp_buhardilla_consigna}}</div>
+            </div>
+            
+            <div class="p-1 row pr-3 pl-3">
+                <div class="text_device_2 align-self-around flex-fill">Temp. Consigna Plt. Baja</div>
+                <div class="align-self-end text_program_2">{{temp_salon_consigna}}</div>
+            </div>
+            <div class="p-1 row pr-3 pl-3">
+                <div class="text_device_2 align-self-around flex-fill">Temp. Consigna Buhardilla</div>
+                <div class="align-self-end text_program_2">{{temp_buhardilla_consigna}}</div>
+            </div>
+
+            <div class="btn-group">
+                <select [(ngModel)]="selectTemp" (change)="changeTemp()">
+                    <option value="0">{{temp_salon_consigna_2}}</option>
+                    <option [value]="temp" *ngFor="let temp of allCourses">{{temp}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="tarjeta" style="margin-left: 250px;">
+        <div class="d-flex mt-2 justify-content-start pl-2">
+            <div class="d-flex mt-2 justify-content-start pl-2">
+                <div class="align-self-center">
+                    <img src="assets/img/ico_temp.svg" width="42" >
+                </div>
+                <div class="text_device align-self-center flex-fill pl-4">Control Temperatura</div>
+            </div>
+        </div>
+        <div class="line_div"></div>
+        
+        <form [formGroup]="controlForm11">
+            <div class="pt-3 pl-2 pr-2 pb-3">
+                <div class="row pr-3 pl-3">
+                    <div class="text_device_2 align-self-center flex-fill">Termostato Buhardilla</div>
+                    <div class="align-self-center">
+                        <label class="switch d-flex align-items-end">
+                            <input formControlName="control_temp_buhardilla" type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    
+                </div>
+
+                <div ngbDropdown class="d-inline-block">
+                    <button class="dropdown-toggle btn btn-outline-primary rounded-pill" id="dropdownMenu1" ngbDropdownToggle>{{temp_salon_consigna}}</button>
+                    <div class="dropdown-menu" id="options" aria-labelledby="dropdownMenu1">
+                       <div ngbDropdownMenu aria-labelledby="dropdownMenu1">
+                        <button class="dropdown-item text_dropdown" *ngFor="let temp of combo_temp['_temp_number']" (click)="changeTemp(temp)">{{temp}}</button>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="row pr-3 pl-3">
+                    <div class="text_device_2 align-self-center flex-fill">Termostado Planta Baja</div>
+                    <div class="align-self-center">
+                        <label class="switch d-flex align-items-end">
+                            <input formControlName="control_temp_planta_baja" type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>

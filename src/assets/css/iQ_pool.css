@@ -2,14 +2,12 @@
 /*button {
   border: none;
   color: white;
-  height: 10px;
-  padding: 20px;
-  text-align: center;
+  height: 10px; C
   text-decoration: none;
   display: inline-block;
   font-family: 'Asap Bold', arial;
   font-size: 15px;
-  margin: 4px 2px;
+  margin: 4px 2px;AWAWWWWWWWWW
   cursor: pointer;
   line-height: 4px;  
 }*/
@@ -458,7 +456,7 @@ border-radius: 10px 10px 10px 10px;
 .text_program_1 {
   /*width: 80px;*/
   height: 30px;
-  color: whitesmoke;
+  color: #333;
   text-align: center;
   display: block;
   font-family: 'Asap', arial;
@@ -469,8 +467,8 @@ border-radius: 10px 10px 10px 10px;
 .text_program_2 {
   width: auto;
   height: 23px;
-  /*color: #0060AB;*/
-  color: #cbc72d;
+  color: #1347d4e5;
+  /*color: #cbc72d;*/
   text-align: center;
   display: block;
   font-family: 'Asap', arial;
@@ -483,7 +481,7 @@ border-radius: 10px 10px 10px 10px;
   width:auto;
   border: 0;
   /*border-top: 1px solid rgba(0, 0, 0, 0.1);*/
-  border-top: 1px solid white;
+  border-top: 1px solid #333;
   margin-top: 10px; 
   margin-bottom: 10px;
   margin-left: 5px;
@@ -532,11 +530,74 @@ border-radius: 10px 10px 10px 10px;
   background-color: #E5E5E5;
 }
 
+@supports(filter: invert(100%)){
+  /*body{background:#111217;}*/
+  #potencia{   
+  filter: invert(100%);
+  }
+}
+
 .fondo {
   background-image: url(../img/fondo2_iq.svg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right top;
+}
+
+.recuadro {
+  background-color: #33353bf1;
+  width: 270px;  
+  height: auto;
+  margin-top: 15px;
+  font-size: 20px;
+  color: whitesmoke !important;
+  /*margin: 0px 20px;*/
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  border-radius: 10px 10px 10px 10px;
+  /*padding-left: 15px;*/
+  padding-top: 5px;
+  /*display: flex;*/
+}
+
+.text_recuadro {
+  /*font-family: 'Asap', arial;*/
+  font-family: Arial, sans-serif;
+  text-decoration-color: #333;
+  font-size: 20px;
+  margin-left: 25px;
+  color: whitesmoke;
+}
+
+.text_recuadro_2 {
+  /*width: auto;
+  height: 23px;*/
+  font-family: Arial, sans-serif;
+  color: orange;
+  text-align: center;
+  display: block;
+  font-size: 38px;
+  margin-left: 60px;
+  /*margin-top: 10px;*/
+}
+
+.tarjeta {
+  background-color: transparent;
+  width: 800px;  
+  height: auto;
+  margin-top: 15px;
+  /*font-size: 24px;*/
+  /*margin: 0px 20px;*/
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  border-radius: 10px 10px 10px 10px;
+  /*padding-left: 15px;*/
+  padding-top: 5px;
+  /*display: flex;*/
 }
 
 .box {
@@ -667,10 +728,10 @@ border-radius: 10px 10px 10px 10px;
   /*width: 145px;*/
   font-family: 'Asap', arial;
   font-weight: bold;
-  text-decoration-color: white;
+  text-decoration-color: #333;
   font-size: 20px;
   margin: auto;
-  color: white;
+  color: #333;
   padding-left: 20px;
   /*margin-right: 20px;
   margin-top: 6px;*/
@@ -679,11 +740,11 @@ border-radius: 10px 10px 10px 10px;
 .text_device_2 {
   /*width: 145px;*/
   font-family: 'Asap', arial;
-  /*font-weight: bold;*/
+  font-weight: bold;
   text-decoration-color: #212121;
   font-size: 18px;
   margin: auto;
-  color: whitesmoke;
+  color: #333;
   /*margin-right: 20px;
   margin-top: 6px;*/
 }
