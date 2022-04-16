@@ -13,6 +13,10 @@ import { ConfigModulosComponent } from './config-modulos/config-modulos.componen
 import { AppRoutingModule } from './app-routing.module';
 import { MainComponent } from './main/main.component';
 import { SensorComponent } from './sensor/sensor.component';
+import { SalonComponent } from './salon/salon.component';
+import { EnergiaComponent } from './energia/energia.component';
+import { DasboardComponent } from './dasboard/dasboard.component';
+import { ClimatizacionComponent } from './climatizacion/climatizacion.component';
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   hostname: '192.168.1.50',
@@ -21,6 +25,11 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   path: '',
   protocol: 'ws',
 }
+
+const ENTRYCOMPONENTS = [
+  EnergiaComponent,
+  ClimatizacionComponent
+];
 
 @NgModule({
   declarations: [
@@ -31,7 +40,12 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     ConfigEnergiaComponent,
     ConfigModulosComponent,
     MainComponent,
-    SensorComponent
+    SensorComponent,
+    SalonComponent,
+    EnergiaComponent,
+    DasboardComponent,
+    ClimatizacionComponent,
+    ENTRYCOMPONENTS
   ],
   imports: [
     BrowserModule,
@@ -42,6 +56,7 @@ export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     NgbModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ENTRYCOMPONENTS]
 })
 export class AppModule { }

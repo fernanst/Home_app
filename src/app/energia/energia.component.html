@@ -1,0 +1,65 @@
+<div class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+    <div *ngIf = "isLoaded()">
+        <div class="d-flex mt-2 mb-3 justify-content-start">
+            <div class="recuadro">
+                <div class="d-flex mt-2 justify-content-start pl-2">
+                    <div class="align-self-center pl-5 pt-4">
+                        <img id="invert" src="assets/img/energy.svg" width="35" >
+                    </div>
+                    <div class="text_recuadro align-self-center flex-fill pt-4">Potencia</div>
+                </div>
+                <div class="row pr-2 pl-2 pt-4 pb-4">
+                    <div class="text_recuadro_2 align-self-end">{{power}}</div>
+                </div>
+            </div>
+
+            <div class="recuadro ml-3">
+                <div class="d-flex mt-2 justify-content-start pl-2">
+                    <div class="align-self-center pl-5 pt-4">
+                        <img id="invert" src="assets/img/energy.svg" width="35" >
+                    </div>
+                    <div class="text_recuadro align-self-center flex-fill pt-4">Tension</div>
+                </div>
+                <div class="row pr-2 pl-2 pt-4 pb-4">
+                    <div class="text_recuadro_2 align-self-end">{{voltage}}</div>
+                </div>
+            </div>
+
+            <div class="recuadro ml-3">
+                <div class="d-flex mt-2 justify-content-start pl-2">
+                    <div class="align-self-center pl-5 pt-4">
+                        <img id="invert" src="assets/img/energy.svg" width="35" >
+                    </div>
+                    <div class="text_recuadro align-self-center flex-fill pt-4">Corriente</div>
+                </div>
+                <div class="row pr-2 pl-2 pt-4 pb-4">
+                    <div class="text_recuadro_2 align-self-end">{{current}}</div>
+                </div>
+            </div>
+
+            <div class="recuadro ml-3">
+                <div class="d-flex mt-2 justify-content-start pl-2">
+                    <div class="align-self-center pl-5 pt-4">
+                        <img id="invert" src="assets/img/energy.svg" width="35" >
+                    </div>
+                    <div class="text_recuadro align-self-center flex-fill pt-4">Frecuencia</div>
+                </div>
+                <div class="row pr-2 pl-2 pt-4 pb-4">
+                    <div class="text_recuadro_2 align-self-end">{{frequency}}</div>
+                </div>
+            </div>
+
+            <div class="recuadro ml-3">
+                <div class="d-flex mt-2 justify-content-start pl-2">
+                    <div class="align-self-center pl-5 pt-4">
+                        <img id="invert" src="assets/img/energy.svg" width="35" >
+                    </div>
+                    <div class="text_recuadro align-self-center flex-fill pt-4">Factor P.</div>
+                </div>
+                <div class="row pr-2 pl-2 pt-4 pb-4">
+                    <div class="text_recuadro_2 align-self-end">{{fp}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

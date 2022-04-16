@@ -16,22 +16,26 @@ export class ConfigClimaComponent implements OnInit {
   public temp_salon:string;
   public temp_salon_consigna: string;
   public temp_salon_consigna_2: string;
-  public temp_buhardilla_consigna: string;
+  public temp_buhardilla_consigna = null;
   public temp_buhardilla:string;
   public temp_exterior:string;
   public temp_seleccionada: string  = '';
+  public temp_consigna_up: string  = '';
+  public temp_consigna_down: string  = '';
   public selectTemp: string  = '0';
   msg: any;
   isConnected: boolean = false;
   deviceToggleSubscription : Subscription;
 
   private temp_number = ['17', '18', '19', '20', '21', '22', '23', '24']
+  private temp_number_dep = ['85','80','75','70', '65', '60', '55', '50', '45', '40', '35']
 
   combo_temp = {_temp_number: this.temp_number}
+  combo_temp_dep = {_temp_number2: this.temp_number_dep}
 
   controlForm11: FormGroup = new FormGroup({
     'control_temp_buhardilla': new FormControl(),
-    'control_temp_planta_baja': new FormControl(),
+    'control_temp_planta_baja': new FormControl()
   })
 
   @ViewChild('msglog', { static: true }) msglog: ElementRef;
@@ -46,6 +50,10 @@ export class ConfigClimaComponent implements OnInit {
     this.deviceToggle("control_temp_planta_baja");
   }
 
+  isLoaded(){
+    return this.temp_buhardilla_consigna != null;
+  }
+
   private deviceToggle(salida_name) {
   	this.deviceToggleSubscription = this.controlForm11.get(salida_name).valueChanges.subscribe(activate => {
       if (typeof(activate) == "boolean"){
@@ -56,10 +64,9 @@ export class ConfigClimaComponent implements OnInit {
     })
   }
 
-  public changeTemp(selectTemp_2: string) {
-    /*this.status_modo=modo;
-    this.control.changeParam('device_mode4', modo)*/
+  public changeTemp(selectTemp_2: string, topic: string) {
     this.temp_seleccionada = selectTemp_2;
+    this._mqttService.unsafePublish("home/params/" + topic,this.temp_seleccionada, { qos: 1, retain: true })
     console.log(this.temp_seleccionada);
   }
 
@@ -94,6 +101,8 @@ export class ConfigClimaComponent implements OnInit {
       else if (_topic == 'home/sensors/temp_salon') {this.temp_salon = this.msg + '\xa0\xa0\xa0ºC';}
       else if (_topic == 'home/sensors/temp_buhardilla') {this.temp_buhardilla = this.msg + '\xa0\xa0ºC';}
       else if (_topic == 'home/sensors/temp_exterior') {this.temp_exterior = this.msg + '\xa0\xa0\xa0ºC';}
+      else if (_topic == 'home/params/temp_consigna_up') {this.temp_consigna_up = '\xa0\xa0\xa0' + this.msg + '\xa0\xa0ºC';}
+      else if (_topic == 'home/params/temp_consigna_down') {this.temp_consigna_down = '\xa0\xa0\xa0' + this.msg + '\xa0\xa0ºC';}
       else if (_topic == 'home/params/temp_salon_consigna') {
           this.temp_salon_consigna = '\xa0\xa0\xa0' + this.msg + '\xa0\xa0ºC';
           this.temp_salon_consigna_2 = this.msg

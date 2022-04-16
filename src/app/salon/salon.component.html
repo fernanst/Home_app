@@ -1,0 +1,368 @@
+<div class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+    <div *ngIf = "isLoaded()">
+        <div class="tarjeta">
+            <div class="d-flex mt-2 justify-content-start pl-2">
+                <div class="d-flex mt-2 justify-content-start pl-2">
+                    <div class="align-self-center">
+                        <img id="invert" src="assets/img/luz.svg" width="42" >
+                    </div>
+                    <div class="text_device align-self-center flex-fill pl-4">Casa</div>
+                </div>
+            </div>
+            <div class="line_div"></div>
+            <form [formGroup]="controlForm1">
+                <div class="pt-3 pl-2 pr-2 pb-3">
+                    <div class="row pr-3">
+                        <div class="col-9">
+                            <div class="text_device_2">Buhardilla Baño</div>
+                        </div>
+                        <div class="col-3">
+                            <label class="switch">
+                                <input formControlName="salida8" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="col-9">
+                            <div class="text_device_2">Buhardilla Hab. 1</div>
+                        </div>
+                        <div class="col-3">
+                            <label class="switch">
+                                <input formControlName="salida1" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="col-9">
+                            <div class="text_device_2">Cocina</div>
+                        </div>
+                        <div class="col-3">
+                            <label class="switch">
+                                <input formControlName="salida12" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="col-9">
+                            <div class="text_device_2">Buhardilla Pasillo</div>
+                        </div>
+                        <div class="col-3">
+                            <label class="switch">
+                                <input formControlName="salida13" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="col-9">
+                            <div class="text_device_2">Habitacion</div>
+                        </div>
+                        <div class="col-3">
+                            <label class="switch">
+                                <input formControlName="salida14" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="col-9">
+                            <div class="text_device_2">Salon</div>
+                        </div>
+                        <div class="col-3">
+                            <label class="switch">
+                                <input formControlName="salida15" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="col-9">
+                            <div class="text_device_2">Subir Persiana Hab.</div>
+                        </div>
+                        <div class="col-3">
+                            <label class="switch">
+                                <input formControlName="salida16" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="col-9">
+                            <div class="text_device_2">Colector Buhardilla</div>
+                        </div>
+                        <div class="col-3">
+                            <label class="switch">
+                                <input formControlName="salida2" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="col-9">
+                            <div class="text_device_2">Colector Pl. Baja</div>
+                        </div>
+                        <div class="col-3">
+                            <label class="switch">
+                                <input formControlName="salida3" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="col-9">
+                            <div class="text_device_2">Espejo</div>
+                        </div>
+                        <div class="col-3">
+                            <label class="switch">
+                                <input formControlName="salida4" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="col-9">
+                            <div class="text_device_2">Baño</div>
+                        </div>
+                        <div class="col-3">
+                            <label class="switch">
+                                <input formControlName="salida5" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="col-9">
+                            <div class="text_device_2">Hall</div>
+                        </div>
+                        <div class="col-3">
+                            <label class="switch">
+                                <input formControlName="salida6" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="col-9">
+                            <div class="text_device_2">Entrada</div>
+                        </div>
+                        <div class="col-3">
+                            <label class="switch">
+                                <input formControlName="salida7" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="row pr-3">
+                        <div class="col-9">
+                            <div class="text_device_2">Escalera</div>
+                        </div>
+                        <div class="col-3">
+                            <label class="switch">
+                                <input formControlName="salida9" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="col-9">
+                            <div class="text_device_2">Garaje</div>
+                        </div>
+                        <div class="col-3">
+                            <label class="switch">
+                                <input formControlName="salida10" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="col-9">
+                            <div class="text_device_2">Buhardilla Hab. 2</div>
+                        </div>
+                        <div class="col-3">
+                            <label class="switch">
+                                <input formControlName="salida11" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="col-9">
+                            <div class="text_device_2">Luz exterior</div>
+                        </div>
+                        <div class="col-3">
+                            <label class="switch">
+                                <input formControlName="L_exterior" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!--div class="tarjeta pt-4">
+            <div class="d-flex mt-2 justify-content-start pl-2">
+                <div class="d-flex mt-2 justify-content-start pl-2">
+                    <div class="align-self-center">
+                        <img id="invert" src="assets/img/luz.svg" width="42" >
+                    </div>
+                    <div class="text_device align-self-center flex-fill pl-4">Modulo 4</div>
+                </div>
+            </div>
+            <div class="line_div"></div>
+            
+            <form [formGroup]="controlForm4">
+                <div class="pt-3 pl-2 pr-2 pb-3">
+                    <div class="row pr-3">
+                        <div class="text_device_2 align-self-center flex-fill">Salida1</div>
+                        <div class="align-self-end">
+                            <label class="switch d-flex align-items-end">
+                                <input formControlName="salida1" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="text_device_2 align-self-center flex-fill">Salida2</div>
+                        <div class="align-self-end">
+                            <label class="switch d-flex align-items-end">
+                                <input formControlName="salida2" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="text_device_2 align-self-center flex-fill">Salida3</div>
+                        <div class="align-self-end">
+                            <label class="switch d-flex align-items-end">
+                                <input formControlName="salida3" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="text_device_2 align-self-center flex-fill">Salida4</div>
+                        <div class="align-self-end">
+                            <label class="switch d-flex align-items-end">
+                                <input formControlName="salida4" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="text_device_2 align-self-center flex-fill">Salida5</div>
+                        <div class="align-self-end">
+                            <label class="switch d-flex align-items-end">
+                                <input formControlName="salida5" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="text_device_2 align-self-center flex-fill">Salida6</div>
+                        <div class="align-self-end">
+                            <label class="switch d-flex align-items-end">
+                                <input formControlName="salida6" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="text_device_2 align-self-center flex-fill">Salida7</div>
+                        <div class="align-self-end">
+                            <label class="switch d-flex align-items-end">
+                                <input formControlName="salida7" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="text_device_2 align-self-center flex-fill">Salida8</div>
+                        <div class="align-self-end">
+                            <label class="switch d-flex align-items-end">
+                                <input formControlName="salida8" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="text_device_2 align-self-center flex-fill">Salida9</div>
+                        <div class="align-self-end">
+                            <label class="switch d-flex align-items-end">
+                                <input formControlName="salida9" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="text_device_2 align-self-center flex-fill">Salida10</div>
+                        <div class="align-self-end">
+                            <label class="switch d-flex align-items-end">
+                                <input formControlName="salida10" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="text_device_2 align-self-center flex-fill">Salida11</div>
+                        <div class="align-self-end">
+                            <label class="switch d-flex align-items-end">
+                                <input formControlName="salida11" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="text_device_2 align-self-center flex-fill">Salida12</div>
+                        <div class="align-self-end">
+                            <label class="switch d-flex align-items-end">
+                                <input formControlName="salida12" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="text_device_2 align-self-center flex-fill">Salida13</div>
+                        <div class="align-self-end">
+                            <label class="switch d-flex align-items-end">
+                                <input formControlName="salida13" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="text_device_2 align-self-center flex-fill">Salida14</div>
+                        <div class="align-self-end">
+                            <label class="switch d-flex align-items-end">
+                                <input formControlName="salida14" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="text_device_2 align-self-center flex-fill">Salida15</div>
+                        <div class="align-self-end">
+                            <label class="switch d-flex align-items-end">
+                                <input formControlName="salida15" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row pr-3">
+                        <div class="text_device_2 align-self-center flex-fill">Salida16</div>
+                        <div class="align-self-end">
+                            <label class="switch d-flex align-items-end">
+                                <input formControlName="salida16" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div-->
+    </div>
+</div>

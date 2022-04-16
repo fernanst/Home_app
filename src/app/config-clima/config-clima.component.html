@@ -1,89 +1,158 @@
-<main role="main">
-    <div class="tarjeta" style="margin-left: 250px;">
-        <div class="d-flex mt-2 justify-content-start pl-2">
+<!--div class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4"-->
+<div class="col-md-9 col-lg-10 pt-3 px-4" style="margin-left: 1px">
+    <div *ngIf="isLoaded()">
+        <div class="tarjeta" style="margin-left: 5px;">
             <div class="d-flex mt-2 justify-content-start pl-2">
-                <div class="align-self-center">
-                    <img src="assets/img/ico_temp.svg" width="42" >
+                <div class="d-flex mt-2 justify-content-start pl-2">
+                    <div class="align-self-center">
+                        <img id="invert" src="assets/img/ico_temp.svg" width="42" >
+                    </div>
+                    <div class="text_device align-self-center flex-fill pl-4">Temperaturas Vivienda</div>
                 </div>
-                <div class="text_device align-self-center flex-fill pl-4">Control Temperatura</div>
+            </div>
+            <div class="line_div"></div>
+            <div class="pt-4 pl-2 pr-2 pb-3">
+                
+                <div class="row pt-1 pr-3 pl-3" style="padding-left: 0px !important">
+                    <div class="col-9">
+                        <div class="text_device_2 align-self-around flex-fill">Temp. entrada</div>
+                    </div>
+                    <div class="col-3">
+                        <div class="align-self-end text_program_2">{{temp_planta_baja}}</div>
+                    </div>
+                </div>
+                
+                <div class="row pt-1 pr-3 pl-3" style="padding-left: 0px !important">
+                    <div class="col-9">
+                        <div class="text_device_2 align-self-around flex-fill">Temp. Buhardilla</div>
+                    </div>
+                    <div class="col-3">
+                        <div class="align-self-end text_program_2">{{temp_buhardilla}}</div>
+                    </div>
+                </div>
+                
+                <div class="row pt-1 pr-3 pl-3" style="padding-left: 0px !important">   
+                    <div class="col-9">
+                        <div class="text_device_2">Temp. Consigna Plt. Baja</div>
+                    </div>
+                    <div class="col-3">
+                        <div class="text_program_2">{{temp_salon_consigna}}</div>
+                    </div>
+                </div>
+                
+                <div class="row pt-1 pr-3 pl-3" style="padding-left: 0px !important">
+                    <div class="col-9">
+                        <div class="text_device_2">Temp. Consigna Buhardilla</div>
+                    </div>
+                    <div class="col-3">
+                        <div class="text_program_2">{{temp_buhardilla_consigna}}</div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="line_div"></div>
-        <div class="pt-4 pl-2 pr-2 pb-3">
-            
-            <div class="row pr-3 pl-3">
-                <div class="text_device_2 align-self-around flex-fill">Temp. entrada</div>
-                <div class="align-self-end text_program_2">{{temp_planta_baja}}</div>
-                <div class="align-self-end text_program_2">{{temp_salon_consigna}}</div>
-            </div>
-            
-            <div class="p-1 row pr-3 pl-3">
-                <div class="text_device_2 align-self-around flex-fill">Temp. Buhardilla</div>
-                <div class="align-self-end text_program_2">{{temp_buhardilla}}</div>
-                <div class="align-self-end text_program_2">{{temp_buhardilla_consigna}}</div>
-            </div>
-            
-            <div class="p-1 row pr-3 pl-3">
-                <div class="text_device_2 align-self-around flex-fill">Temp. Consigna Plt. Baja</div>
-                <div class="align-self-end text_program_2">{{temp_salon_consigna}}</div>
-            </div>
-            <div class="p-1 row pr-3 pl-3">
-                <div class="text_device_2 align-self-around flex-fill">Temp. Consigna Buhardilla</div>
-                <div class="align-self-end text_program_2">{{temp_buhardilla_consigna}}</div>
-            </div>
 
-            <div class="btn-group">
-                <select [(ngModel)]="selectTemp" (change)="changeTemp()">
-                    <option value="0">{{temp_salon_consigna_2}}</option>
-                    <option [value]="temp" *ngFor="let temp of allCourses">{{temp}}</option>
-                </select>
+        <div class="tarjeta" style="margin-left: 5px;">
+            <div class="d-flex mt-2 justify-content-start pl-2">
+                <div class="d-flex mt-2 justify-content-start pl-2">
+                    <div class="align-self-center">
+                        <img id="invert" src="assets/img/temp_prog.svg" width="42" >
+                    </div>
+                    <div class="text_device align-self-center flex-fill pl-4">Control Temperatura</div>
+                </div>
             </div>
+            <div class="line_div"></div>
+            
+            <form [formGroup]="controlForm11">
+                <div class="pt-3 pl-2 pr-2 pb-3">
+                    <div class="row pr-3 pl-3" style="padding-left: 0px !important">
+                        <div class="col-9">
+                            <div class="text_device_2 align-self-center flex-fill">Termostato Planta Baja</div>
+                        </div>
+                        <div class="col-3">
+                            <label class="switch d-flex align-items-end">
+                                <input formControlName="control_temp_planta_baja" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div ngbDropdown class="d-inline-block pl-4">
+                            <button class="btn btn-primary rounded-pill dropdown_all" id="dropdownMenu1" ngbDropdownToggle>{{temp_salon_consigna}}</button>
+                            <div class="dropdown-menu" id="options" aria-labelledby="dropdownMenu1">
+                                <div ngbDropdownMenu aria-labelledby="dropdownMenu1">
+                                    <button class="dropdown-item text-center" *ngFor="let temp of combo_temp['_temp_number']" (click)="changeTemp(temp,'temp_salon_consigna')">{{temp}}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row pr-3 pl-3 pt-3" style="padding-left: 0px !important">
+                        <div class="col-9">
+                            <div class="text_device_2 align-self-center flex-fill">Termostato Buhardilla</div>
+                        </div>
+                        <div class="col-3">
+                            <label class="switch d-flex align-items-end">
+                                <input formControlName="control_temp_buhardilla" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div ngbDropdown class="d-inline-block pl-4">
+                            <button class="btn btn-primary rounded-pill dropdown_all" id="dropdownMenu1" ngbDropdownToggle>{{temp_buhardilla_consigna}}</button>
+                            <div class="dropdown-menu" id="options" aria-labelledby="dropdownMenu1">
+                                <div ngbDropdownMenu aria-labelledby="dropdownMenu1">
+                                    <button class="dropdown-item text-center" *ngFor="let temp of combo_temp['_temp_number']" (click)="changeTemp(temp,'temp_buhardilla_consigna')">{{temp}}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="tarjeta" style="margin-left: 5px;">
+            <div class="d-flex mt-2 justify-content-start pl-2">
+                <div class="d-flex mt-2 justify-content-start pl-2">
+                    <div class="align-self-center">
+                        <img id="invert" src="assets/img/deposito.svg" width="42" >
+                    </div>
+                    <div class="text_device align-self-center flex-fill pl-4">Control Deposito Inercia</div>
+                </div>
+            </div>
+            <div class="line_div"></div>
+            
+            <form [formGroup]="controlForm11">
+                <div class="pt-3 pl-2 pr-2 pb-3">
+                    <div class="row pr-3 pl-3" style="padding-left: 0px !important">
+                        <div class="col-6">
+                            <div class="text_device_2">Temp. superior</div>
+                        </div>
+                        <div class="col-6">
+                            <div ngbDropdown class="d-inline-block pl-4">
+                                <button class="btn btn-primary rounded-pill dropdown_all" id="dropdownMenu1" ngbDropdownToggle>{{temp_consigna_up}}</button>
+                                <div class="dropdown-menu" id="options" aria-labelledby="dropdownMenu1">
+                                    <div ngbDropdownMenu aria-labelledby="dropdownMenu1">
+                                        <button class="dropdown-item text-center" *ngFor="let temp1 of combo_temp_dep['_temp_number2']" (click)="changeTemp(temp1,'temp_consigna_up')">{{temp1}}</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row pr-3 pl-3 pt-3"style="padding-left: 0px !important">
+                        <div class="col-6">
+                            <div class="text_device_2">Temp. inferior</div>
+                        </div>
+                        <div class="col-6">
+                            <div ngbDropdown class="d-inline-block pl-4">
+                                <button class="btn btn-primary rounded-pill dropdown_all" id="dropdownMenu1" ngbDropdownToggle>{{temp_consigna_down}}</button>
+                                <div class="dropdown-menu" id="options" aria-labelledby="dropdownMenu1">
+                                    <div ngbDropdownMenu aria-labelledby="dropdownMenu1">
+                                        <button class="dropdown-item text-center" *ngFor="let temp1 of combo_temp_dep['_temp_number2']" (click)="changeTemp(temp1,'temp_consigna_down')">{{temp1}}</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-
-    <div class="tarjeta" style="margin-left: 250px;">
-        <div class="d-flex mt-2 justify-content-start pl-2">
-            <div class="d-flex mt-2 justify-content-start pl-2">
-                <div class="align-self-center">
-                    <img src="assets/img/ico_temp.svg" width="42" >
-                </div>
-                <div class="text_device align-self-center flex-fill pl-4">Control Temperatura</div>
-            </div>
-        </div>
-        <div class="line_div"></div>
-        
-        <form [formGroup]="controlForm11">
-            <div class="pt-3 pl-2 pr-2 pb-3">
-                <div class="row pr-3 pl-3">
-                    <div class="text_device_2 align-self-center flex-fill">Termostato Buhardilla</div>
-                    <div class="align-self-center">
-                        <label class="switch d-flex align-items-end">
-                            <input formControlName="control_temp_buhardilla" type="checkbox">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                    
-                </div>
-
-                <div ngbDropdown class="d-inline-block">
-                    <button class="dropdown-toggle btn btn-outline-primary rounded-pill" id="dropdownMenu1" ngbDropdownToggle>{{temp_salon_consigna}}</button>
-                    <div class="dropdown-menu" id="options" aria-labelledby="dropdownMenu1">
-                       <div ngbDropdownMenu aria-labelledby="dropdownMenu1">
-                        <button class="dropdown-item text_dropdown" *ngFor="let temp of combo_temp['_temp_number']" (click)="changeTemp(temp)">{{temp}}</button>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="row pr-3 pl-3">
-                    <div class="text_device_2 align-self-center flex-fill">Termostado Planta Baja</div>
-                    <div class="align-self-center">
-                        <label class="switch d-flex align-items-end">
-                            <input formControlName="control_temp_planta_baja" type="checkbox">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-</main>
+</div>

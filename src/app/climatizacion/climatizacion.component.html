@@ -1,0 +1,69 @@
+<div class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+    <div *ngIf = "isLoaded()">
+        <div class="d-flex mt-2 mb-3 justify-content-start">
+            <div class="recuadro">
+                <div class="d-flex mt-2 justify-content-start pl-2">
+                    <div class="align-self-center pl-5 pt-4">
+                        <img id="invert" src="assets/img/ico_temp.svg" width="35" >
+                    </div>
+                    <div class="text_recuadro align-self-center flex-fill pt-4">Exterior</div>
+                </div>
+                <div class="row pr-2 pl-2 pt-4 pb-4">
+                    <div class="text_recuadro_2 align-self-end">{{temp_exterior}}</div>
+                </div>
+            </div>
+
+            <div class="recuadro ml-3">
+                <div class="d-flex mt-2 justify-content-start pl-2">
+                    <div class="align-self-center pl-5 pt-4">
+                        <img id="invert" src="assets/img/ico_temp.svg" width="35" >
+                    </div>
+                    <div class="text_recuadro align-self-center flex-fill pt-4">Salon</div>
+                </div>
+                <div class="row pr-2 pl-2 pt-4 pb-4">
+                    <div class="text_recuadro_2 align-self-end">{{temp_salon}}</div>
+                </div>
+            </div>
+
+            <div class="recuadro ml-3">
+                <div class="d-flex mt-2 justify-content-start pl-2">
+                    <div class="align-self-center pl-5 pt-4">
+                        <img id="invert" src="assets/img/ico_temp.svg" width="35" >
+                    </div>
+                    <div class="text_recuadro align-self-center flex-fill pt-4">Entrada</div>
+                </div>
+                <div class="row pr-2 pl-2 pt-4 pb-4">
+                    <div class="text_recuadro_2 align-self-end">{{temp_planta_baja}}</div>
+                </div>
+                <div ngbDropdown class="d-inline-block ml-5 mb-4">
+                    <button class="btn btn-primary rounded-pill dropdown_all" id="dropdownMenu1" ngbDropdownToggle>{{temp_salon_consigna}}</button>
+                    <div class="dropdown-menu" id="options" aria-labelledby="dropdownMenu1">
+                        <div ngbDropdownMenu aria-labelledby="dropdownMenu1">
+                            <button class="dropdown-item text-center" *ngFor="let temp of combo_temp['_temp_number']" (click)="changeTemp(temp,'temp_salon_consigna')">{{temp}}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recuadro ml-3">
+                <div class="d-flex mt-2 justify-content-start pl-2">
+                    <div class="align-self-center pl-5 pt-4">
+                        <img id="invert" src="assets/img/ico_temp.svg" width="35" >
+                    </div>
+                    <div class="text_recuadro align-self-center flex-fill pt-4">Buhardilla</div>
+                </div>
+                <div class="row pr-2 pl-2 pt-4 pb-4">
+                    <div class="text_recuadro_2 align-self-end">{{temp_buhardilla}}</div>
+                </div>
+                <div ngbDropdown class="d-inline-block ml-5 mb-4">
+                    <button class="btn btn-primary rounded-pill dropdown_all" id="dropdownMenu1" ngbDropdownToggle>{{temp_buhardilla_consigna}}</button>
+                    <div class="dropdown-menu" id="options" aria-labelledby="dropdownMenu1">
+                        <div ngbDropdownMenu aria-labelledby="dropdownMenu1">
+                            <button class="dropdown-item text-center" *ngFor="let temp of combo_temp['_temp_number']" (click)="changeTemp(temp,'temp_buhardilla_consigna')">{{temp}}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

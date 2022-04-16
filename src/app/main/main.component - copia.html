@@ -1,3 +1,4 @@
+<body>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
         <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Home Montelar</a>
         <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
@@ -14,21 +15,18 @@
                 <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                    <a class="nav-link active" (click)='dashboard()'>
+                    <a class="nav-link active" href="#" (click)="Dashboard()">
                         <span data-feather="home"></span>
                         Dashboard <span class="sr-only">(current)</span>
                     </a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" routerLink="/main/salon">
-                        <span data-feather="layers"></span>Salon
-                    </a>
-                    <!--a class="nav-link" (click)='salon()'>
+                    <a class="nav-link" href="#" (click)="salon()">
                         <span data-feather="file"></span>Salon
-                    </a-->
+                    </a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" (click)='temp()'>
+                    <a class="nav-link" href="#" (click)="cocina()">
                         <span data-feather="shopping-cart"></span>Cocina
                     </a>
                     </li>
@@ -52,11 +50,6 @@
                         <span data-feather="layers"></span>Buhardilla
                     </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/main/clima">
-                            <span data-feather="layers"></span>Climatización
-                        </a>
-                    </li>
                 </ul>
 
                 <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
@@ -67,7 +60,7 @@
                 </h6>
                 <ul class="nav flex-column mb-2">
                     <li class="nav-item">
-                    <a class="nav-link" routerLink="/main/config-clima">
+                    <a class="nav-link" (click)="climatizacion()">
                         <span data-feather="file-text"></span>
                         Climatización
                     </a>
@@ -85,25 +78,16 @@
                     </a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" routerLink="/main/energia">
+                    <a class="nav-link" href="#" (click)="energia()">
                         <span data-feather="file-text"></span>
                         Energia
                     </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" (click)="fv()">
-                            <span data-feather="file-text"></span>
-                            Fotovoltaica
-                        </a>
-                        </li>
                 </ul>
                 </div>
             </nav> 
-        </div>
-    </div>
-<router-outlet></router-outlet>
 
-            <!--main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4" style="background-color: rgb(17, 18, 23);">
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4" style="background-color: rgb(17, 18, 23);">
                 <div *ngIf = "isLoaded()">
                     <div class="d-flex mt-2 mb-3 justify-content-start">
                         <div class="recuadro">
@@ -273,7 +257,7 @@
                                 <div class="align-self-end text_program_2">{{temp_buhardilla_consigna}}</div>
                             </div>
 
-                            <!- -div class="btn-group" mdbDropdown>
+                            <!--div class="btn-group" mdbDropdown>
                                 <button mdbDropdownToggle type="button" mdbBtn color="primary" class="dropdown-toggle waves-light" mdbWavesEffect>{{temp_salon_consigna}}</button>
                             
                                 <div class="dropdown-menu dropdown-primary">
@@ -285,23 +269,23 @@
                                 <a class="dropdown-item" href="#">22</a>
                                 <a class="dropdown-item" href="#">23</a>
                                 </div>
-                            </div- ->
+                            </div-->
 
 
-                            <!- -div class="d-inline-flex mt-1 ml-2">
+                            <!--div class="d-inline-flex mt-1 ml-2">
                                 <input type="text" id="course" name="course" class="form-control" [(ngModel)]="newCourse">
                                 <button class="dropdown-item text_dropdown" (click)="changeTemp(temp)">{{temp}}</button>
                                 
-                            </div- ->
+                            </div-->
 
-                            <!- -div class="d-inline-flex mt-1 ml-2">
+                            <!--div class="d-inline-flex mt-1 ml-2">
                                 <div ngbDropdown class="d-inline-block pr-3">
                                 <button class="btn btn-primary rounded-pill dropdown_all " id="dropdown2" ngbDropdownToggle>{{temp_salon_consigna}}</button>
                                 <div ngbDropdownMenu aria-labelledby="dropdown2">
                                     <button class="dropdown-item text_dropdown" *ngFor="let temp of combo_temp['_temp_number']" (click)="changeTemp(temp)">{{temp}}</button>
                                 </div>
                                 </div>
-                            </div- ->
+                            </div-->
                         </div>
                     </div>
 
@@ -486,7 +470,7 @@
                         </div>
                         <div class="line_div"></div>
                         <form [formGroup]="controlForm1">
-                            <!- -div class="box2" style="width: 250px;"- ->
+                            <!--div class="box2" style="width: 250px;"-->
                             <div class="pt-3 pl-2 pr-2 pb-3">
                                 <div class="row pr-3 pl-3">
                                     <div class="text_device_2 align-self-center flex-fill">Valvula Cascada</div>
@@ -532,8 +516,8 @@
                                         </label>
                                     </div>
                                 </div>
-                                <!- -button onclick="location.href='https://g-541a59388c.grafana-workspace.eu-west-1.amazonaws.com/d/h6DTPEWnz/all_piscinas?orgId=1&from=1628306323519&to=1628349523520&viewPanel=2'" type="button">
-                                </button- ->
+                                <!--button onclick="location.href='https://g-541a59388c.grafana-workspace.eu-west-1.amazonaws.com/d/h6DTPEWnz/all_piscinas?orgId=1&from=1628306323519&to=1628349523520&viewPanel=2'" type="button">
+                                </button-->
                                 <div class="row pr-3 pl-3">
                                     <div class="text_device_2 align-self-center flex-fill">Cascada</div>
                                     <div class="align-self-center">
@@ -559,7 +543,7 @@
                         <div class="line_div"></div>
                         
                         <form [formGroup]="controlForm1">
-                            <!- -div class="box2" style="width: 250px;"- ->
+                            <!--div class="box2" style="width: 250px;"-->
                             <div class="pb-3">
                                 <div class="d-flex justify-content-around">
                                     <div class="pl-3 d-flex flex-column"> 
@@ -917,4 +901,4 @@
             </main>
         </div>
     </div>
-</body-->
+</body>

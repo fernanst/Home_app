@@ -1,21 +1,22 @@
-import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, OnDestroy, ComponentFactoryResolver, ViewContainerRef} from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
-import { Paho } from 'ng2-mqtt/mqttws31';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { IMqttMessage, MqttService } from 'ngx-mqtt';
 import * as Feather from 'feather-icons';
-import { Router } from '@angular/router';
+import { EnergiaComponent } from '../energia/energia.component';
+import { ClimatizacionComponent } from '../climatizacion/climatizacion.component';
+import { SalonComponent } from '../salon/salon.component';
+import { MqttIotService } from '../mqtt-iot.service';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent implements OnInit, OnDestroy {
+//export class MainComponent implements OnInit, OnDestroy {
+export class MainComponent implements OnInit {
   // private mqttClient: Paho.MQTT.Client;
   private subscription: Subscription;
-  private subscription2: Subscription;
-  private message: String;
   topic_status_output = 'home/#';
   topic_output_m1 = 'home/outputs/modulo1';
   topic_output_m2 = 'home/outputs/modulo2';
@@ -27,10 +28,10 @@ export class MainComponent implements OnInit, OnDestroy {
   topic_temp_buhardilla_consigna = "home/params/temp_buhardilla_consigna"
 
   private temp_number = ['17', '18', '19', '20', '21', '22', '23', '24']
+  combo_temp = {_temp_number: this.temp_number}
 
-  combo_temp = {
-    _temp_number: this.temp_number,
-  }
+  activeTab = 0;
+  tabs = [ {title: 'Energia',component: EnergiaComponent}, {title: 'Climatización',component: ClimatizacionComponent} ]
 
   msg: any;
   isConnected: boolean = false;
@@ -39,7 +40,7 @@ export class MainComponent implements OnInit, OnDestroy {
   public current : string;
   public voltage: string;
   public frequency: string;
-  public fp: string
+  public fp = null;
   public temp_planta_baja:string;
   public temp_salon:string;
   public temp_salon_consigna: string;
@@ -115,11 +116,27 @@ export class MainComponent implements OnInit, OnDestroy {
 
   @ViewChild('msglog', { static: true }) msglog: ElementRef;
 
-  constructor(private _router: Router, private _mqttService: MqttService) { 
+  constructor(private componentFactoryResolver: ComponentFactoryResolver, private viewContainerRef: ViewContainerRef, 
+    private _mqttService: MqttService, private mqtt_service: MqttIotService) { 
     _mqttService.connect({username: 'homemontelar', password: 'Fern2170!'});
+    this.mqtt_service.init();
     //_mqttService.connect();
   }
   
+  dashboard(){
+    //this.activeTab = pos;
+    //const factory = this.componentFactoryResolver.resolveComponentFactory(this.tabs[pos].component);
+    const factory = this.componentFactoryResolver.resolveComponentFactory(ClimatizacionComponent);
+    const ref = this.viewContainerRef.createComponent(factory);
+    ref.changeDetectorRef.detectChanges();
+  }
+
+  temp(){
+    const factory = this.componentFactoryResolver.resolveComponentFactory(EnergiaComponent);
+    const ref = this.viewContainerRef.createComponent(factory);
+    ref.changeDetectorRef.detectChanges();
+  }
+
   ngOnInit(): void {
     // Broker connection on startup
     // this.connectToMQTTBroker();
@@ -127,35 +144,40 @@ export class MainComponent implements OnInit, OnDestroy {
     for (let i = 1; i < 17; i++) {
       this.salida("salida" + i)
       this.salida_m3("salida" + i)
-      this.salida_m4("salida" + i)
+      //this.salida_m4("salida" + i)
     }
     this.subscribeToggle4();
     this.subscribeToggle5();
     this.subscribeToggle6();
     this.subscribeToggle7();
-    this.subscribeNewTopic();
+    //this.subscribeNewTopic();
     this.subscribeL_exterior();
     //this.temp_salon_consigna=this.
   }
 
-  newCourse : string = '';
-  allCourses : string[] =  ['17', '18', '19', '20', '21', '22', '23', '24'];
-  selectTemp: string  = '0';
   temp_seleccionada: string  = '';
 
   public bano() {
     console.log("Click Baño");
   }
 
-  public climatizacion() {
-    this._router.navigate(['config-clima']);
-    console.log("Click climatizacion");
+  public salon() {
+    console.log("Click salon");
+    const factory = this.componentFactoryResolver.resolveComponentFactory(SalonComponent);
+    const ref = this.viewContainerRef.createComponent(factory);
+    ref.changeDetectorRef.detectChanges();
   }
-  public changeTemp() {
+
+  public changeTemp(selectTemp: string, topic: string) {
     /*this.status_modo=modo;
     this.control.changeParam('device_mode4', modo)*/
-    this.temp_seleccionada = this.selectTemp;
+    this.temp_seleccionada = selectTemp;
+    this._mqttService.unsafePublish("home/params/" + topic,this.temp_seleccionada, { qos: 1, retain: true })
     console.log(this.temp_seleccionada);
+  }
+
+  isLoaded(){
+    return this.fp != null;
   }
 
   private salida(salida_name) {
@@ -251,9 +273,9 @@ export class MainComponent implements OnInit, OnDestroy {
     })
   }
 
-  ngOnDestroy(): void {
+  /*ngOnDestroy(): void {
     this.subscription.unsubscribe();
-  }
+  }*/
 
   subscribeNewTopic(): void { 
     console.log('inside subscribe new topic')
